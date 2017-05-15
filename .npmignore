@@ -1,0 +1,16 @@
+#General
+node_modules
+.DS_Store
+npm-debug.log
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Example data
+wti_config.json
+
+# Data generated in tests
+test/test_sandbox
+
+# Optional npm cache directory
+.npm

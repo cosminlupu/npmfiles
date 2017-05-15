@@ -1,0 +1,29 @@
+{
+  "name": "npmfiles",
+  "version": "0.1.0",
+  "description": "Get all main files for your project's NPM modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cosminlupu/npmfiles.git"
+  },
+  "keywords": [
+    "npmfiles",
+    "main",
+    "npm",
+    "files"
+  ],
+  "author": "Cosmin Lupu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cosminlupu/npmfiles/issues"
+  },
+  "homepage": "https://github.com/cosminlupu/npmfiles#readme",
+  "dependencies": {
+    "caller-id": "^0.1.0",
+    "glob": "^7.1.1"
+  }
+}
