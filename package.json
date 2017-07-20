@@ -1,6 +1,6 @@
 {
   "name": "npmfiles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Get all main files for your project's NPM modules",
   "main": "index.js",
   "scripts": {
