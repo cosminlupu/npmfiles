@@ -1,6 +1,8 @@
 npmfiles
 ================
 
+[![Build Status](https://travis-ci.org/cosminlupu/npmfiles.svg?branch=master)](https://travis-ci.org/cosminlupu/npmfiles) [![Coverage Status](https://coveralls.io/repos/github/cosminlupu/npmfiles/badge.svg?branch=master)](https://coveralls.io/github/cosminlupu/npmfiles?branch=master)
+
 - [Inspiration](#inspiration)
 - [Usage](#usage)
     - [Usage with gulp](#usage-with-gulp)

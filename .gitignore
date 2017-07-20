@@ -15,3 +15,6 @@ test/test_sandbox
 
 # Optional npm cache directory
 .npm
+
+#Include fixtures node_modules
+!test/fixtures/*/node_modules

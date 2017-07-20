@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "first": "*"
+  },
+  "devDependencies": {
+    "second": "*"
+  }
+}

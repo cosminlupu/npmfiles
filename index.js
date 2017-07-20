@@ -81,7 +81,9 @@ function getMainFiles(modulePath, override) {
 
     //No main override
     } else if(json.main){
-        files.push(path.resolve(modulePath + "/" + json.main));
+        files = files.concat(
+            glob.sync(path.resolve(modulePath + "/" + json.main))
+        );
     }
 
     return files;

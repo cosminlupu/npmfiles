@@ -4,7 +4,8 @@
   "description": "Get all main files for your project's NPM modules",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,9 @@
   "dependencies": {
     "caller-id": "^0.1.0",
     "glob": "^7.1.1"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "jest": "^20.0.4"
   }
 }
