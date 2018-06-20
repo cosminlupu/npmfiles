@@ -87,9 +87,10 @@ function getMainFiles(modulePath, override) {
         files = files.concat(
             glob.sync(path.resolve(modulePath + "/" + json.main))
         );
-    } else {
-        console.warn('npmfiles: No main files for module ' + path.basename(modulePath));
     }
 
+    if (!files.length) {
+        console.warn('npmfiles: No main files found for module ' + path.basename(modulePath));
+    }
     return files;
 }
