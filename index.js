@@ -87,6 +87,8 @@ function getMainFiles(modulePath, override) {
         files = files.concat(
             glob.sync(path.resolve(modulePath + "/" + json.main))
         );
+    } else {
+        throw 'No main files for module ' + path.basename(modulePath);
     }
 
     return files;
