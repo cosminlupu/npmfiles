@@ -59,8 +59,11 @@ function _extend(object, source) {
  * @return {Array}                    Array of files for module
  */
 function getMainFiles(modulePath, override) {
-    var json = JSON.parse(fs.readFileSync(modulePath + '/package.json'));
+    var json;
     var files = [];
+    try {
+	    json = JSON.parse(fs.readFileSync(modulePath + '/package.json'));
+    } catch (e) { /* it's ok */ }
 
     if(override.ignore){
         return [];
@@ -80,7 +83,7 @@ function getMainFiles(modulePath, override) {
         });
 
     //No main override
-    } else if(json.main){
+    } else if(json && json.main){
         files = files.concat(
             glob.sync(path.resolve(modulePath + "/" + json.main))
         );
