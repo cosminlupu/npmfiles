@@ -90,7 +90,7 @@ function getMainFiles(modulePath, override) {
     }
 
     if (!files.length) {
-        console.warn('npmfiles: No main files found for module ' + path.basename(modulePath));
+	      console.warn('npmfiles: No main files found for module ' + path.relative(`${process.cwd()}/node_modules`, modulePath));
     }
     return files;
 }
