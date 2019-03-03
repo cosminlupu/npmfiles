@@ -14,6 +14,7 @@ npmfiles
         - [nodeModulesPath](#nodeModulesPath)
         - [nodePackageJsonPath](#nodePackageJsonPath)
         - [includeDev](#includedev)
+        - [showWarnings](#showwarnings)
 
 ## Inspiration
 
@@ -127,6 +128,12 @@ mainNPMFiles({
 Type: `Boolean` Default: `false`
 
 Set this option to `true` to add the devDependencies to your dependencies
+
+#### showWarnings
+
+Type: `Boolean` Default: `false`
+
+Set this option to `true` to show warnings for packages that don't have any files in the main entry or overrides
 
 ## LICENSE
 

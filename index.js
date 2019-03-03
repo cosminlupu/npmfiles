@@ -7,7 +7,8 @@ module.exports = function (options){
     var defaultOptions = {
         nodeModulesPath: './node_modules',
         packageJsonPath: './package.json',
-        includeDev: false
+        includeDev: false,
+        showWarnings: false
     };
 
     options = _extend(defaultOptions, (options || {}));
@@ -31,13 +32,13 @@ module.exports = function (options){
 
     for (key in packages.dependencies) {
         override = overrides[key] || {};
-        keys = keys.concat(getMainFiles(options.nodeModulesPath + "/" + key, override));
+        keys = keys.concat(getMainFiles(options.nodeModulesPath + "/" + key, override, options.showWarnings));
     }
 
     if (options.includeDev) {
         for (key in packages.devDependencies) {
             override = overrides[key] || {};
-            keys = keys.concat(getMainFiles(options.nodeModulesPath + "/" + key, override));
+            keys = keys.concat(getMainFiles(options.nodeModulesPath + "/" + key, override, options.showWarnings));
         }
     }
 
@@ -58,7 +59,7 @@ function _extend(object, source) {
  * @param  {Array|String} override    Array of overrides for module
  * @return {Array}                    Array of files for module
  */
-function getMainFiles(modulePath, override) {
+function getMainFiles(modulePath, override, showWarnings) {
     var json;
     var files = [];
     try {
@@ -89,7 +90,7 @@ function getMainFiles(modulePath, override) {
         );
     }
 
-    if (!files.length) {
+    if (showWarnings && !files.length) {
 	    console.warn('npmfiles: No main files found for module ' + path.relative(`${process.cwd()}/node_modules`, modulePath));
     }
     return files;
